@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidat index{% endblock %}
+
+{% block body %}
+    <h1>La liste candidateur </h1>
+
+    
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Pseudo</th>
+					
+					<th>Mail</th>
+					<th>Genre</th>
+					
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for candidat in candidats %}
+					<tr>
+						<td>{{ candidat.id }}</td>
+						<td>{{ candidat.pseudo }}</td>
+						<td>{{ candidat.email }}</td>
+						<td>{{ candidat.genre }}</td>
+						
+                    
+						<td>
+							<a href="{{ path('app_candidat_show', {'id': candidat.id}) }}">show</a>
+							<a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="11">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Genre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for candidat in candidats %}
+            <tr>
+                <td>{{ candidat.id }}</td>
+                <td>{{ candidat.Pseudo }}</td>
+                <td>{{ candidat.email }}</td>
+                <td>{{ candidat.genre }}</td>
+                <td>
+                    <a href="{{ path('app_candidat_show', {'id': candidat.id}) }}">show</a>
+                    <a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+
+    <a href="{{ path('app_candidat_new') }}">Create new</a>
+{% endblock %}

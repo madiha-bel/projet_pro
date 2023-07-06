@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ResultatReponse index{% endblock %}
+
+{% block body %}
+    <h1>ResultatReponse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resultat_reponse in resultat_reponses %}
+            <tr>
+                <td>{{ resultat_reponse.id }}</td>
+                <td>
+                    <a href="{{ path('app_resultat_reponse_show', {'id': resultat_reponse.id}) }}">show</a>
+                    <a href="{{ path('app_resultat_reponse_edit', {'id': resultat_reponse.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_resultat_reponse_new') }}">Create new</a>
+{% endblock %}
