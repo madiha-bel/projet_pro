@@ -3,6 +3,7 @@
 {% block title %}Candidat{% endblock %}
 
 {% block body %}
+<div class="container_admin">
     <h1>Candidat</h1>
 
     <table class="table">
@@ -23,12 +24,27 @@
                 <th>Genre</th>
                 <td>{{ candidat.genre }}</td>
             </tr>
+             <tr>
+                <th>Edit</th>
+                <td><a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}">edit</a>
+                
+                </td>
+                
+            </tr>
+             <tr>
+                <th>Delete</th>
+                <td>
+                {{ include('candidat/_delete_form.html.twig') }}
+                </td>
+                
+            </tr>
         </tbody>
     </table>
 
     <a href="{{ path('app_candidat_index') }}">back to list</a>
 
-    <a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}">edit</a>
+    
 
-    {{ include('candidat/_delete_form.html.twig') }}
+    
+    </div>
 {% endblock %}

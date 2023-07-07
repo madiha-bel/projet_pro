@@ -9,7 +9,9 @@ use Symfony\Component\HttpFoundation\File\File;
 use App\Repository\QuestionsRepository;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+
 #[ORM\Entity(repositoryClass: QuestionsRepository::class)]
+#[Vich\Uploadable]
 class Questions
 {
     #[ORM\Id]
@@ -34,7 +36,7 @@ class Questions
     #[ORM\JoinColumn(nullable: false)]
     private ?Options $options = null;
 
-     
+    //  lien entre entity et vich.uploader.yml
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName')]
     private ?File $imageFile = null;
 
@@ -134,5 +136,6 @@ class Questions
     public function getImageName(): ?string
     {
         return $this->imageName;
+        
     }
 }

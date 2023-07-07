@@ -4,36 +4,61 @@
 
 {% block body %}
 <style>
-
+.imgQst{
+ width:50%;   
+}
 
 </style>
 
-    <h1>Questions</h1>
+    <h1> {{ question.series.titre }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
+
+    <div class="affiche_containare_questions"> 
+       
+            {# <tr>
                 <th>Id</th>
                 <td>{{ question.id }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ vich_uploader_asset(question, 'image') }}" alt="{{ question.imageName }}"></td>
-            </tr>
-            <tr>
-                <th>Question</th>
-                <td>{{ question.question }}</td>
-            </tr>
-            <tr>
-                <th>Note</th>
-                <td>{{ question.note }}</td>
-            </tr>
-        </tbody>
-    </table>
+            </tr> #}
+            
+          <div class="affiche_image"> 
+                     <img class="imgQst" src={{ asset('/images/products/' ~ question.imageName) }} >
+          </div> 
+            
+          <div class="affiche_qst"> 
+              <h3>  {{ question.question }} </h3>
+           </div> 
+           <div class="affiche_rpn"> 
+              
 
-    <a href="{{ path('app_questions_index') }}">back to list</a>
+              <ol class="list-group list-group-numbered">
+                  <div class="">
+                    <h4>Reponse 01</h4>
+                    <li class="repo1">{{ question.options.reponse1 }} </li>
+                  </div>
+                <div class="">
+                    <h4 >Reponse 02</h4>
+                    <li class="repo2">{{ question.options.reponse2 }}</li>
+                </div>
+                  <div class="">
+                    <h4 >Reponse 03</h4>
+                    <li class="repo3">{{ question.options.reponse3 }}</li>
+                  </div>
+                <div class="">
+                    <h4 >Reponse 04</h4>
+                    <li class="repo4">{{ question.options.reponse4 }}</li>
+                </div>
+               </ol>
 
-    <a href="{{ path('app_questions_edit', {'id': question.id}) }}">edit</a>
+             </div> 
 
-    {{ include('questions/_delete_form.html.twig') }}
+     </div>    
+            
+                {# <td>{{ question.note }}</td> #}
+       
+
+    {# <a href="{{ path('app_questions_index') }}">back to list</a> #}
+
+    {# <a href="{{ path('app_questions_edit', {'id': question.id}) }}">edit</a> #}
+
+    {# {{ include('questions/_delete_form.html.twig') }} #}
 {% endblock %}
