@@ -7,10 +7,10 @@
    <section class="home">
        <div class="container post">
            <div class="post_home">
-               <img src="../img/images2.jpeg">
+              <a href="{{ path('app_code_conduit') }}"> <img src="../img/images2.jpeg"></a>
            </div>
            <div class="post_info">
-               <a href="" class="category_button">Code de la route</a>
+               <a href="{{ path('app_code_conduit') }}" class="category_button"><h1>Code de la route</h1></a>
                <h2 class="post_title">Le plaisirest permis</h2>
                <p class="post_body">
                Avec l’auto-école codecar l’apprentissage du code et de la conduite est plus simple, plus libre et plus transparent.
@@ -18,6 +18,23 @@
 
               
            </div>
+
+       </div>
+   </section>
+   <section class="">
+       <div class="container ">
+           <div class="post_home">
+           <h2 >« On se fait une petite série ensemble ? »</h2>
+        
+              <p class="post_body_home">
+                        Vous avez des questions qui restent sans réponse ou besoin de
+                        motivation afin de poursuivre vos révisions ? J’anime chaque semaine trois
+                        lives interactifs lors desquels nous pouvons échanger et vous préparer à
+                         l’examen du code de la route.               
+               </p>
+                <a href="{{ path('app_code_conduit') }}"><button>les série</button></a>
+           </div>
+          
 
        </div>
    </section>

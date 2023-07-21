@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CodeConduitController!{% endblock %}
+
+{% block body %}
+
+{% for series in series %}
+
+<section class="">
+       <div class="container ">
+           <div class="post_home code">
+           <a href=""><h2 >{{ series.titre }}</h2></a>
+        
+              <p class="">
+                     {{ series.descriptions }}       
+               </p>
+               
+           </div>
+            {% else %}
+
+       </div>
+   </section>
+
+        {% endfor %}     
+
+</div>
+{% endblock %}
