@@ -1,0 +1,16 @@
+
+
+la partie utilisateur
+
+1 : composer require security      
+
+2 : php bin/console make:user :    =>Nom de table : utilisateur  => ok => ok=> ok
+
+3 : php bin/console d:s:u -f   
+
+4 :  php bin/console make:registration   : yes =>no =>yes => 0
+
+5 : php bin/console make:auth  : 1 =>CustomAuthenticator =>ok =>ok =>ok =>1
+
+
+6: composer require profiler

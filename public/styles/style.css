@@ -124,6 +124,7 @@ img{
 }
 a{
     text-decoration: none;
+    color: var(--dark-color);
 }
  /* css page home */
 section{
@@ -163,6 +164,9 @@ gap: 4rem;
   
 }
 a h2{
+    color: var(--first-color);
+}
+a {
     color: var(--first-color);
 }
 .post:hover .post_home img{

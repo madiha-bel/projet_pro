@@ -108,7 +108,7 @@ h3{
 h4{
     font-size:1rem;
 }
-a{
+ nav a{
     color: var(--white-color);
     transition:var(--transition) ;
 }
@@ -165,7 +165,7 @@ nav button{
     opacity: 0;
     transition: var(--transition);
     flex-direction: column;
-    background-color: var(--first-color);
+    background-color: var(--dark-color);
     box-shadow: 0 3rem 3rem rgba(0, 0,0  ,0.4);
 }
 .nav_profile ul li a{
@@ -178,7 +178,7 @@ nav button{
 .nav_profile ul li:last-child  a{
     padding: 1rem;
     background: var(--red-color);
-    color: var(--white-color);
+    color: var(--dark-color);
 }
 
 .nav_profile:hover > ul{

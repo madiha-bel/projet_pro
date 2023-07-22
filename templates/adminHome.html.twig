@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin!{% endblock %}
+
+{% block contenu %}
+
+<h2>je suis dispo uniquement par les admins</h2>
+
+<a href="{{ path('app_candidat_index') }}">Nos Candidat</a>
+<a href="{{ path('app_series_index') }}">Nos series</a>
+<a href="{{ path('app_questions_index') }}">Nos Questions</a>
+<a href="{{ path('app_resultat_index') }}">Resultat</a>
+
+
+{% endblock %}

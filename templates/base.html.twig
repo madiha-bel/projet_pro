@@ -20,8 +20,15 @@
 		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
-	{% block nav_admin %}
-				 {% include("./nav/index.html.twig") %}
+	{% block nav %}
+	{% if is_granted('ROLE_ADMIN') %}
+			{% include 'nav_admin/index.html.twig' %}
+		{% elseif is_granted('ROLE_USER') %}
+			{% include 'nav_candidat/index.html.twig' %}
+		{% else %}
+			{% include 'nav/index.html.twig' %}
+		{% endif %}
+				
 	{% endblock %}
 		{% block contenu %}
 			
